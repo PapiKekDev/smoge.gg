@@ -14,8 +14,9 @@ async def on_message(message):
 
     if message.content.startswith('https://twitter.com/'):
         temp = message.content
-        final = temp.replace('https://twitter.com/','https://fxtwitter.com/')
-        await message.channel.send(final)
+        link = temp.replace('https://twitter.com/','https://fxtwitter.com/')
+        usor = message.author.name
+        await message.channel.send("{}\n{}".format(usor, link))
         await message.delete()
 
 client.run(token)
